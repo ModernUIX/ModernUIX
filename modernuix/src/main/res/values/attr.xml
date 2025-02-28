@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ModernButton">
+        <attr name="buttonGradientStart" format="color" />
+        <attr name="buttonGradientEnd" format="color" />
+        <attr name="iconSrc" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ModernRadioGroup">
+        <attr name="selectorColor" format="color" />
+        <attr name="cornerRadius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ModernSwitch">
+        <attr name="thumbColor" format="color" />
+        <attr name="trackActiveColor" format="color" />
+        <attr name="trackInactiveColor" format="color" />
+    </declare-styleable>
+</resources>

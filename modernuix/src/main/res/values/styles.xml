@@ -1,0 +1,13 @@
+<style name="ModernPopup" parent="Theme.AppCompat.Dialog">
+    <item name="android:windowIsTranslucent">true</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:windowAnimationStyle">@style/ModernPopupAnimation</item>
+    <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+    <item name="android:colorBackgroundCacheHint">@null</item>
+</style>
+
+<style name="ModernPopupAnimation">
+    <item name="android:windowEnterAnimation">@anim/popup_slide_up</item>
+    <item name="android:windowExitAnimation">@anim/popup_slide_down</item>
+</style>

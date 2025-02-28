@@ -1,0 +1,110 @@
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
+
+android {
+    namespace 'com.modernuix'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        buildConfig false
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
+
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier "sources"
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                
+                groupId = 'com.github.modernuix'
+                artifactId = 'modernuix'
+                version = '1.0.0'
+
+                artifact(sourceJar) {
+                    classifier = 'sources'
+                }
+
+                pom {
+                    name = 'ModernUIX'
+                    description = 'Modern UI Components Library for Android'
+                    url = 'https://github.com/ModernUIX/ModernUIX'
+                    
+                    licenses {
+                        license {
+                            name = 'MIT License'
+                            url = 'https://opensource.org/licenses/MIT'
+                        }
+                    }
+                    
+                    developers {
+                        developer {
+                            id = 'AzliRynz'
+                            name = 'AzliRynz'
+                            email = 'gameplaytebakgambard@gmail.com'
+                        }
+                    }
+                    
+                    scm {
+                        connection = 'scm:git:git://github.com/ModernUIX/ModernUIX.git'
+                        developerConnection = 'scm:git:ssh://github.com/ModernUIX/ModernUIX.git'
+                    }
+                }
+            }
+        }
+        
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/your-github-username/ModernUIX")
+                credentials {
+                    username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_USERNAME")
+                    password = project.findProperty("gpr.token") ?: System.getenv("GITHUB_TOKEN")
+                }
+            }
+        }
+    }
+}

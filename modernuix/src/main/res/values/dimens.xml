@@ -1,0 +1,12 @@
+<resources>
+    <!-- Untuk tombol -->
+    <dimen name="modern_button_corner">24dp</dimen>
+    <dimen name="modern_button_elevation">4dp</dimen>
+    
+    <!-- Untuk switch -->
+    <dimen name="modern_switch_thumb_size">24dp</dimen>
+    <dimen name="modern_switch_track_height">28dp</dimen>
+    
+    <!-- Untuk popup -->
+    <dimen name="modern_popup_padding">16dp</dimen>
+</resources>
