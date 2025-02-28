@@ -2,8 +2,8 @@
 
 Modern Android UI Components Library with sleek animations and material design. Built purely with Java and AndroidX.
 
-[![GitHub License](https://img.shields.io/github/license/your-username/ModernUIX)](https://opensource.org/licenses/MIT)
-[![GitHub Release](https://img.shields.io/github/v/release/your-username/ModernUIX)](https://github.com/your-username/ModernUIX/releases)
+[![GitHub License](https://img.shields.io/github/license/ModernUIX/ModernUIX)](https://opensource.org/licenses/MIT)
+[![GitHub Release](https://img.shields.io/github/v/release/ModernUIX/ModernUIX)](https://github.com/your-username/ModernUIX/releases)
 [![Android API](https://img.shields.io/badge/API-21%2B-brightgreen.svg)](https://android-arsenal.com/api?level=21)
 
 ## Features ✨
