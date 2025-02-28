@@ -49,9 +49,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
 
-task sourceJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier "sources"
+tasks.register("sourceJar", Jar) {
+    archiveClassifier.set("sources")
+    from sourceSets.main.allSource
 }
 
 afterEvaluate {
